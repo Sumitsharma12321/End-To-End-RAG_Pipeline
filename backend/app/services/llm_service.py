@@ -12,10 +12,9 @@ def generate_answer(question: str, context_chunks: list[str]) -> str:
     prompt = f"""
 You are a helpful document assistant.
 
-Answer the question using ONLY the context below.
+Use the context below to answer the question.
 
-If the answer is not present in the context, reply:
-"I don't know based on the document."
+If the answer is partially in the context, provide the information that is available and clearly mention what is not specified or unclear from the document.
 
 Context:
 {context}
@@ -23,11 +22,11 @@ Context:
 Question:
 {question}
 
-Answer:
+Provide a clear, detailed answer:
 """
 
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="openai/gpt-oss-120b",
         messages=[
             {
                 "role": "user",
@@ -35,7 +34,7 @@ Answer:
             }
         ],
         temperature=0.2,
-        max_tokens=500
+        max_tokens=800
     )
 
     return response.choices[0].message.content.strip()
