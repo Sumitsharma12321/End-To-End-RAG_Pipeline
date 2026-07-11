@@ -23,22 +23,31 @@ from ..db.vector_store import (
 router = APIRouter()
 
 
+
+
 def process_single_file(file: UploadFile) -> UploadResponse:
     """
     Runs the complete ingestion pipeline for a single document.
 
     Steps:
-    1. Save uploaded file
-    2. Extract text
-    3. Split into chunks
-    4. Generate embeddings
-    5. Store chunks in ChromaDB
+    1. Check duplicate document
+    2. Save uploaded file
+    3. Extract text
+    4. Split into chunks
+    5. Generate embeddings
+    6. Store chunks in ChromaDB
     """
 
+   
+
+    # ----------------------------------------------------
     # Save file
+    # ----------------------------------------------------
     doc_id, file_path = save_upload(file)
 
+    # ----------------------------------------------------
     # Extract text
+    # ----------------------------------------------------
     text = extract_text(file_path)
 
     if not text or not text.strip():
@@ -46,24 +55,33 @@ def process_single_file(file: UploadFile) -> UploadResponse:
             f"No text could be extracted from '{file.filename}'."
         )
 
+    # ----------------------------------------------------
     # Create chunks
+    # ----------------------------------------------------
     chunks = chunk_text(
         text=text,
         doc_id=doc_id,
         document_name=file.filename,
     )
 
+    # ----------------------------------------------------
     # Generate embeddings
+    # ----------------------------------------------------
     embeddings = embed_texts(
         [chunk["text"] for chunk in chunks]
     )
 
-    # Store in ChromaDB
+    # ----------------------------------------------------
+    # Store chunks in ChromaDB
+    # ----------------------------------------------------
     store_chunks(
         chunks,
         embeddings,
     )
 
+    # ----------------------------------------------------
+    # Return response
+    # ----------------------------------------------------
     return UploadResponse(
         doc_id=doc_id,
         filename=file.filename,

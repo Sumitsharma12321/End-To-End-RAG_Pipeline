@@ -8,8 +8,10 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
 
     embeddings = model.encode(
         texts,
+        batch_size=64,              # Added
         convert_to_numpy=True,
-        show_progress_bar=False
+        show_progress_bar=False,
+        normalize_embeddings=True,
     )
 
     return embeddings.tolist()
@@ -20,7 +22,8 @@ def embed_query(query: str) -> list[float]:
 
     embedding = model.encode(
         query,
-        convert_to_numpy=True
+        convert_to_numpy=True,
+        normalize_embeddings=True,
     )
 
     return embedding.tolist()

@@ -101,13 +101,7 @@ def store_chunks(
         return len(chunks)
 
     except Exception as e:
-
-        if "already exists" in str(e).lower():
-            raise ValueError(
-                "This document has already been indexed."
-            )
-
-        raise
+      raise
 
 
 # ---------------------------------------------------------------

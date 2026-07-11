@@ -6,7 +6,7 @@ class Settings(BaseSettings):
 
     chroma_db_path: str = "./chroma_db"
     upload_dir: str = "./uploaded_docs"
-    chunk_size: int = 300
+    chunk_size: int = 500
     chunk_overlap: int = 60
     top_k: int = 5
 
