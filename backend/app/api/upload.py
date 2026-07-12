@@ -30,12 +30,11 @@ def process_single_file(file: UploadFile) -> UploadResponse:
     Runs the complete ingestion pipeline for a single document.
 
     Steps:
-    1. Check duplicate document
-    2. Save uploaded file
-    3. Extract text
-    4. Split into chunks
-    5. Generate embeddings
-    6. Store chunks in ChromaDB
+    1. Save uploaded file
+    2. Extract text
+    3. Split into chunks
+    4. Generate embeddings
+    5. Store chunks in ChromaDB
     """
 
    
