@@ -5,11 +5,11 @@
 #   - Multiple files → POST /api/upload/multiple (NEW)
 # UI, CSS, layout — completely unchanged
 # ================================================================
-
+import os
 import streamlit as st
 import requests
 
-BACKEND = "http://localhost:8000"
+BACKEND = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # ── Page config ──────────────────────────────────────────────────
 st.set_page_config(
