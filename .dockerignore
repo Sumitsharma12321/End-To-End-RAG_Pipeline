@@ -1,0 +1,75 @@
+# ================================================================
+# .DOCKERIGNORE — Docker build context se ye files exclude karo
+# Jaise .gitignore kaam karta hai, waise ye Docker ke liye kaam karta hai
+# Isse build context chota hota hai = faster builds
+# ================================================================
+
+# ── Python artifacts ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environments ──────────────────────────────────────────
+venv/
+env/
+.venv/
+ENV/
+.env.local
+
+# ── IDE files ─────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Git ───────────────────────────────────────────────────────────
+.git/
+.gitignore
+.gitattributes
+
+# ── Data directories — volumes se handle honge ───────────────────
+# Ye directories container mein copy NAHI honge
+# Docker volumes se mount honge
+chroma_db/
+uploaded_docs/
+*.db
+
+# ── Sensitive files ───────────────────────────────────────────────
+# API keys kabhi image mein nahi aane chahiye
+.env
+*.env
+.env.*
+!.env.example
+
+# ── Test/Dev files ────────────────────────────────────────────────
+tests/
+notebooks/
+*.ipynb
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── Documentation ─────────────────────────────────────────────────
+README.md
+docs/
+*.md
+
+# ── Model cache — Dockerfile mein download hoga ──────────────────
+.cache/
+*.cache
+
+# ── Logs ──────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Build artifacts ───────────────────────────────────────────────
+dist/
+build/
+*.egg-info/

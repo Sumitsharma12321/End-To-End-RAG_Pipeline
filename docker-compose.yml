@@ -1,0 +1,86 @@
+version: "3.8"
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+
+    container_name: smart_doc_backend
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      CHROMA_DB_PATH: /app/chroma_db
+      UPLOAD_DIR: /app/uploaded_docs
+      PYTHONUNBUFFERED: "1"
+      SENTENCE_TRANSFORMERS_HOME: /app/.cache/sentence_transformers
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - chroma_data:/app/chroma_db
+      - uploaded_docs:/app/uploaded_docs
+
+    networks:
+      - app_network
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+
+    container_name: smart_doc_frontend
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    environment:
+      BACKEND_URL: http://backend:8000
+      STREAMLIT_SERVER_HEADLESS: "true"
+      STREAMLIT_BROWSER_GATHER_USAGE_STATS: "false"
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      backend:
+        condition: service_healthy
+
+    networks:
+      - app_network
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+
+volumes:
+  chroma_data:
+    name: smart_doc_chroma_data
+
+  uploaded_docs:
+    name: smart_doc_uploaded_docs
+
+
+networks:
+  app_network:
+    driver: bridge
