@@ -9,7 +9,7 @@ import os
 import streamlit as st
 import requests
 
-BACKEND = os.getenv("BACKEND_URL", "https://smart-document-backend.onrender.com")
+BACKEND = os.getenv("BACKEND_URL", "https://end-to-end-ragpipeline-production.up.railway.app")
 
 # ── Page config ──────────────────────────────────────────────────
 st.set_page_config(
