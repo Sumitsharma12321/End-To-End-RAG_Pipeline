@@ -15,7 +15,9 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],   # Replace with frontend URL in production
+    allow_origins=["https://smart-document-frontend.onrender.com/",
+                    "http://localhost:8501",   #Local streamlit Developnment
+    ],   
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
