@@ -42,7 +42,7 @@ WORKDIR /app
 # Copy Requirements First
 # (Docker Layer Caching)
 # ----------------------------------------------------
-COPY requirements.txt .
+COPY backend/requirements.txt .
 
 # ----------------------------------------------------
 # Install Python Packages
@@ -52,7 +52,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # ----------------------------------------------------
 # Copy Frontend Source Code
 # ----------------------------------------------------
-COPY . .
+COPY backend/ .
 
 # ----------------------------------------------------
 # Set Ownership
