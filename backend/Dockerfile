@@ -27,7 +27,7 @@ RUN pip install --upgrade pip wheel
 WORKDIR /install
 
 # Copy only requirements first (Docker cache optimization)
-COPY requirements.txt .
+COPY backend/requirements.txt .
 
 # Install Python dependencies
 RUN pip install \
@@ -64,8 +64,8 @@ RUN useradd -ms /bin/bash appuser
 WORKDIR /app
 
 # Copy backend source code
-COPY . .
-RUN pwd && ls -R
+COPY backend/ .
+
 # Create required directories
 RUN mkdir -p \
     chroma_db \
@@ -94,4 +94,4 @@ HEALTHCHECK --interval=30s \
 CMD curl -f http://localhost:8000/health || exit 1
 
 # Start FastAPI
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]
+CMD uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000} --workers 1
