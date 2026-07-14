@@ -65,7 +65,7 @@ WORKDIR /app
 
 # Copy backend source code
 COPY . .
-
+RUN pwd && ls -R
 # Create required directories
 RUN mkdir -p \
     chroma_db \
