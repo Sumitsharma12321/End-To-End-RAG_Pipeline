@@ -9,7 +9,7 @@ import os
 import streamlit as st
 import requests
 
-BACKEND = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND = os.getenv("BACKEND_URL", "https://smart-docs-backend.onrender.com")
 
 # ── Page config ──────────────────────────────────────────────────
 st.set_page_config(
