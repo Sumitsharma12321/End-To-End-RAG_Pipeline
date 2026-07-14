@@ -27,7 +27,7 @@ RUN pip install --upgrade pip wheel
 WORKDIR /install
 
 # Copy only requirements first (Docker cache optimization)
-COPY backend/requirements.txt .
+COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install \
@@ -64,7 +64,7 @@ RUN useradd -ms /bin/bash appuser
 WORKDIR /app
 
 # Copy backend source code
-COPY backend/ .
+COPY . .
 
 # Create required directories
 RUN mkdir -p \
