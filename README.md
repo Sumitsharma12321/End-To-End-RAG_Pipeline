@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Smart%20Documents%20Insights&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Production-Grade%20RAG%20Application&descAlignY=55&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Smart%20Documents%20Insights%20-%20DocMind&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32&desc=Production-Grade%20RAG%20Application&descAlignY=55&descSize=18" width="100%"/>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
