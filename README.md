@@ -414,7 +414,7 @@ python --version
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/smart-documents-insights.git
+git clone https://github.com/Sumitsharma12321/End-To-End-RAG_Pipeline.git
 cd smart-documents-insights
 ```
 
@@ -457,16 +457,16 @@ cd backend
 uvicorn app.main:app --reload --port 8000
 
 # Terminal 2 — Frontend
-streamlit run frontend/app.py
+streamlit run frontend/streamlit_app/app.py
 ```
 
 ### 6️⃣ Open in Browser
 
 | Interface | URL |
 |-----------|-----|
-| 🖥️ Streamlit UI | http://localhost:8501 |
-| 📖 API Swagger Docs | http://localhost:8000/docs |
-| ❤️ Health Check | http://localhost:8000/health |
+| 🖥️ Streamlit UI |https://smart-document-frontend.onrender.com/ |
+| 📖 API Swagger Docs | https://end-to-end-ragpipeline-production.up.railway.app/docs |
+| ❤️ Health Check | https://end-to-end-ragpipeline-production.up.railway.app/health |
 
 ---
 
@@ -528,7 +528,7 @@ docker system prune -a
 | `CHUNK_SIZE` | ❌ | `500` | Characters per text chunk |
 | `CHUNK_OVERLAP` | ❌ | `60` | Overlap characters between chunks |
 | `TOP_K` | ❌ | `5` | Number of chunks retrieved per query |
-| `BACKEND_URL` | ❌ | `http://localhost:8000` | Backend URL (Docker: `http://backend:8000`) |
+| `BACKEND_URL` | ❌ | `https://end-to-end-ragpipeline-production.up.railway.app/` | Backend URL (Docker: `http://backend:8000`) |
 
 ---
 
@@ -680,13 +680,15 @@ DELETE /api/documents/550e8400-e29b-41d4-a716-446655440000
 
 | Feature | Screenshot |
 |---------|-----------|
-| 🏠 **Home — Empty State** | ![Empty State](docs/assets/screenshots/empty_state.png) |
+| 🏠 **Home — Empty State** | ![Empty State](<img width="937" height="514" alt="image" src="https://github.com/user-attachments/assets/14eb3463-83a1-476a-8d32-08fb4b7958aa" />
+) |
 | 📤 **Document Upload** | ![Upload](docs/assets/screenshots/upload.png) |
-| 💬 **Chat Interface** | ![Chat](docs/assets/screenshots/chat.png) |
-| 🔍 **Source Citations** | ![Sources](docs/assets/screenshots/sources.png) |
+| 💬 **Chat Interface** | ![Chat](<img width="278" height="315" alt="image" src="https://github.com/user-attachments/assets/abf48aef-f296-4a26-98b0-c22424a7037b" />
+) |
+| 🔍 **Source Citations** | ![Sources](<img width="351" height="136" alt="image" src="https://github.com/user-attachments/assets/2d2f6dc9-2a06-4738-a631-472dcc02fb68" />
+) |
 | 📋 **Document Manager** | ![Docs](docs/assets/screenshots/doc_manager.png) |
 
-> 📸 *Add your actual screenshots to `docs/assets/screenshots/`*
 
 </div>
 
@@ -724,24 +726,6 @@ curl -X POST http://localhost:8000/api/query \
 
 ---
 
-## ⚡ Performance Highlights
-
-<div align="center">
-
-| Operation | Average Time | Notes |
-|-----------|:---:|-------|
-| PDF text extraction | 0.5 – 2.0 sec | Scales with page count |
-| Text chunking | < 0.1 sec | Very fast |
-| Embedding 100 chunks | 1 – 3 sec | CPU-based, no GPU |
-| ChromaDB storage | 0.2 – 0.5 sec | Persistent write |
-| Query embedding | ~0.05 sec | Single vector |
-| HNSW vector search | < 0.01 sec | Sub-millisecond |
-| Groq LLM generation | 1 – 3 sec | LPU-accelerated inference |
-| **Total query latency** | **⚡ 2 – 4 sec** | **End-to-end** |
-
-</div>
-
-> **Why so fast?** Groq's custom LPU (Language Processing Unit) hardware delivers very high-throughput inference, keeping total round-trip latency low even with a large context window.
 
 ---
 
@@ -825,14 +809,14 @@ curl -X POST http://localhost:8000/api/query \
 
 <img src="https://github.com/yourusername.png" width="100" style="border-radius: 50%"/>
 
-### Your Name
+### Sumit Sharma
 
-*AI Engineer | Python Developer | Open Source Contributor*
+*AI Engineer | Agent Developer | Open Source Contributor*
 
-[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=for-the-badge&logo=github)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-yourname-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourname)
+[![GitHub](https://img.shields.io/badge/GitHub-yourusername-181717?style=for-the-badge&logo=github)](https://github.com/Sumitsharma12321)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-yourname-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sumit-sharma-9a7750319/)
 [![Portfolio](https://img.shields.io/badge/Portfolio-yoursite.com-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yoursite.com)
-[![Email](https://img.shields.io/badge/Email-youremail@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:youremail@gmail.com)
+[![Email](https://img.shields.io/badge/Email-youremail@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sumitsharma9098660389@gmain.com)
 
 > *"Built with FastAPI, ChromaDB, Groq, and Streamlit — one PDF at a time."*
 
@@ -845,7 +829,7 @@ curl -X POST http://localhost:8000/api/query \
 ```
 MIT License
 
-Copyright (c) 2026 Your Name
+Copyright (c) 2026 sumit sharma
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
