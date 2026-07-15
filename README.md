@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/ChromaDB-Vector%20DB-orange?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Groq-Llama%203.1%2070B-00A67E?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Groq-openai/gpt%203.1%2070B-00A67E?style=flat-square"/>
   <img src="https://img.shields.io/badge/LangChain-Text%20Splitter-1C3C3C?style=flat-square"/>
   <img src="https://img.shields.io/badge/Sentence%20Transformers-MiniLM-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/>
@@ -71,11 +71,14 @@
 
 | Service | URL | Status |
 |---------|-----|--------|
-| 🖥️ **Frontend** (Streamlit) | [smart-docs.streamlit.app](https://smart-docs.streamlit.app) | ![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square) |
-| ⚙️ **Backend API** (FastAPI) | [api.smart-docs.railway.app](https://api.smart-docs.railway.app) | ![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square) |
-| 📖 **API Docs** (Swagger) | [api.smart-docs.railway.app/docs](https://api.smart-docs.railway.app/docs) | ![Status](https://img.shields.io/badge/status-live-brightgreen?style=flat-square) |
+| 🖥️ **Frontend** (Streamlit) | [smart-docs.streamlit.app](https://smart-document-frontend.onrender.com/) | ![Status](<img width="1346" height="567" alt="image" src="https://github.com/user-attachments/assets/a5cea445-c3b6-4110-b957-10c706b082b5" />
+) |
+| ⚙️ **Backend API** (FastAPI) | [api.smart-docs.railway.app](https://end-to-end-ragpipeline-production.up.railway.app) | ![Status](<img width="1211" height="557" alt="image" src="https://github.com/user-attachments/assets/69346fdd-f297-4018-9897-2392d8093ec3" />
+) |
+| 📖 **API Docs** (Swagger) | [api.smart-docs.railway.app/docs](https://end-to-end-ragpipeline-production.up.railway.app/docs) | ![Status](<img width="1211" height="557" alt="image" src="https://github.com/user-attachments/assets/438c2b68-58b1-4049-8e89-0e8a9fae5f70" />
+) |
 
-> ⚠️ *Replace the above URLs with your actual deployed links after deployment.*
+
 
 </div>
 
