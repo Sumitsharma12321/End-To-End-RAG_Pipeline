@@ -517,6 +517,15 @@ docker system prune -a
 </details>
 
 ---
+## Docker Images
+
+### Backend
+docker pull 9098sumit/smart-documents-backend:v1.0
+
+### Frontend
+docker pull 9098sumit/smart-documents-frontend:v1.0
+
+---
 
 ## 🔐 Environment Variables
 
